@@ -1,0 +1,45 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run MPIN",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/snapshot/MPIN.py",
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "--incre_mode", "alone",
+                "--window", "4",
+                "--eval_ratio", "0.5",
+                "--epochs", "200",
+                "--base", "SAGE",
+                "--dataset", "ICU",
+                "--k", "10",
+                "--prefix", "testMissRate",
+                "--stream", "1"
+            ],
+            "console": "integratedTerminal",
+            "env": {"PYTHONPATH": "${workspaceFolder}"}
+        }
+        // {
+        //     "name": "Run FP",
+        //     "type": "python",
+        //     "request": "launch",
+        //     "program": "${workspaceFolder}/snapshot/FP.py",
+        //     "cwd": "${workspaceFolder}",
+        //     "args": [
+        //         "--incre_mode", "alone",
+        //         "--window", "4",
+        //         "--eval_ratio", "0.5",
+        //         "--epochs", "40",
+        //         "--dataset", "ICU",
+        //         "--k", "10",
+        //         "--prefix", "testMissRate",
+        //         "--stream", "1"
+        //     ],
+        //     "console": "integratedTerminal",
+        //     "env": {"PYTHONPATH": "${workspaceFolder}"}
+        // }
+    ],
+    "compounds": []
+}

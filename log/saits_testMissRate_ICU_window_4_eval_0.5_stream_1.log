@@ -1,0 +1,163 @@
+/Users/phatnguyen/.pyenv/versions/MNIP_master_thesis/lib/python3.8/site-packages/threadpoolctl.py:1223: RuntimeWarning: 
+Found Intel OpenMP ('libiomp') and LLVM OpenMP ('libomp') loaded at
+the same time. Both libraries are known to be incompatible and this
+can cause random crashes or deadlocks on Linux when loaded in the
+same Python program.
+Using threadpoolctl may cause crashes or deadlocks. For more
+information and possible workarounds, please see
+    https://github.com/joblib/threadpoolctl/blob/master/multiple_openmp.md
+
+  warnings.warn(msg, RuntimeWarning)
+Loading the dataset physionet_2012 with TSDB (https://github.com/WenjieDu/Time_Series_Database)...
+Starting preprocessing physionet_2012...
+Dataset physionet_2012 has already been downloaded. Processing directly...
+Dataset physionet_2012 has already been cached. Loading from cache directly...
+Loaded successfully!
+Index(['RecordID', 'ALP', 'ALT', 'AST', 'Albumin', 'BUN', 'Bilirubin',
+       'Cholesterol', 'Creatinine', 'DiasABP', 'FiO2', 'GCS', 'Glucose',
+       'HCO3', 'HCT', 'HR', 'K', 'Lactate', 'MAP', 'MechVent', 'Mg',
+       'NIDiasABP', 'NIMAP', 'NISysABP', 'Na', 'PaCO2', 'PaO2', 'Platelets',
+       'RespRate', 'SaO2', 'SysABP', 'Temp', 'TroponinI', 'TroponinT', 'Urine',
+       'WBC', 'Weight', 'pH'],
+      dtype='object')
+X shape (575424, 37)
+sum of nan: ALP            565999
+ALT            565729
+AST            565728
+Albumin        568185
+BUN            533754
+Bilirubin      565631
+Cholesterol    574430
+Creatinine     533565
+DiasABP        263626
+FiO2           485094
+GCS            390993
+Glucose        536155
+HCO3           534639
+HCT            520745
+HR              56408
+K              531762
+Lactate        551730
+MAP            265405
+MechVent       488703
+Mg             534589
+NIDiasABP      333353
+NIMAP          336687
+NISysABP       333137
+Na             534547
+PaCO2          509005
+PaO2           509125
+Platelets      533019
+RespRate       436982
+SaO2           552301
+SysABP         263603
+Temp           361791
+TroponinI      574250
+TroponinT      569177
+Urine          176846
+WBC            536682
+Weight         271356
+pH             505977
+dtype: int64
+Model initialized successfully. Number of the trainable parameters: 1376730
+epoch 0: training loss 1.1778
+epoch 1: training loss 0.9639
+epoch 2: training loss 0.8973
+epoch 3: training loss 0.8437
+epoch 4: training loss 0.8245
+epoch 5: training loss 0.8023
+epoch 6: training loss 0.7865
+epoch 7: training loss 0.7711
+epoch 8: training loss 0.7552
+epoch 9: training loss 0.7514
+epoch 10: training loss 0.7449
+epoch 11: training loss 0.7323
+epoch 12: training loss 0.7322
+epoch 13: training loss 0.7298
+epoch 14: training loss 0.7240
+epoch 15: training loss 0.7095
+epoch 16: training loss 0.7073
+epoch 17: training loss 0.7020
+epoch 18: training loss 0.7081
+epoch 19: training loss 0.7015
+epoch 20: training loss 0.6921
+epoch 21: training loss 0.6938
+epoch 22: training loss 0.6914
+epoch 23: training loss 0.6870
+epoch 24: training loss 0.6831
+epoch 25: training loss 0.6805
+epoch 26: training loss 0.6806
+epoch 27: training loss 0.6718
+epoch 28: training loss 0.6739
+epoch 29: training loss 0.6745
+epoch 30: training loss 0.6794
+epoch 31: training loss 0.6726
+epoch 32: training loss 0.6683
+epoch 33: training loss 0.6660
+epoch 34: training loss 0.6669
+epoch 35: training loss 0.6668
+epoch 36: training loss 0.6647
+epoch 37: training loss 0.6576
+epoch 38: training loss 0.6607
+epoch 39: training loss 0.6571
+epoch 40: training loss 0.6694
+epoch 41: training loss 0.6484
+epoch 42: training loss 0.6566
+epoch 43: training loss 0.6560
+epoch 44: training loss 0.6608
+epoch 45: training loss 0.6563
+epoch 46: training loss 0.6548
+epoch 47: training loss 0.6549
+epoch 48: training loss 0.6490
+epoch 49: training loss 0.6546
+epoch 50: training loss 0.6479
+epoch 51: training loss 0.6536
+epoch 52: training loss 0.6539
+epoch 53: training loss 0.6476
+epoch 54: training loss 0.6486
+epoch 55: training loss 0.6439
+epoch 56: training loss 0.6384
+epoch 57: training loss 0.6498
+epoch 58: training loss 0.6458
+epoch 59: training loss 0.6449
+epoch 60: training loss 0.6489
+epoch 61: training loss 0.6422
+epoch 62: training loss 0.6291
+epoch 63: training loss 0.6387
+epoch 64: training loss 0.6410
+epoch 65: training loss 0.6396
+epoch 66: training loss 0.6416
+epoch 67: training loss 0.6419
+epoch 68: training loss 0.6353
+epoch 69: training loss 0.6420
+epoch 70: training loss 0.6407
+epoch 71: training loss 0.6417
+epoch 72: training loss 0.6339
+Exceeded the training patience. Terminating the training procedure...
+Finished training.
+num of Parameters: 1.37673
+Model Size: 5.256 MB
+SAITS Model Size: 5.255714416503906
+type of imputations 1 <class 'numpy.ndarray'>
+X_intact shape (11988, 4, 37) <class 'numpy.ndarray'>
+X_indicate mask shape (11988, 4, 37)
+imputation shape 1 (11988, 4, 37)
+imputation shape 2 torch.Size([11988, 4, 37])
+valid impute value samples: tensor([-0.0179,  0.0064, -0.2391,  ..., -0.6668, -0.3189, -0.4449])
+valid true value samples: tensor([-0.4593,  0.0000,  0.4396,  ..., -0.0336, -1.4187, -0.6170])
+valid impute error MAE: 0.5270718409623167
+valid impute error MSE: 0.8829654144908021
+valid impute error MRE: 0.6614344743811463
+end time: 2024-03-24 13:02:37.746938
+elasped time:(mins) 23.551068833333332
+done!!!
+Traceback (most recent call last):
+  File "nn.py", line 124, in <module>
+    res_df.to_csv(f'./exp_res/{args.method}_{args.prefix}_{args.dataset}_window_{args.window}_eval_{args.eval_ratio}.csv', header=True, index=False)
+  File "/Users/phatnguyen/.pyenv/versions/MNIP_master_thesis/lib/python3.8/site-packages/pandas/core/generic.py", line 3170, in to_csv
+    formatter.save()
+  File "/Users/phatnguyen/.pyenv/versions/MNIP_master_thesis/lib/python3.8/site-packages/pandas/io/formats/csvs.py", line 185, in save
+    f, handles = get_handle(
+  File "/Users/phatnguyen/.pyenv/versions/MNIP_master_thesis/lib/python3.8/site-packages/pandas/io/common.py", line 493, in get_handle
+    f = open(path_or_buf, mode, encoding=encoding, errors=errors, newline="")
+FileNotFoundError: [Errno 2] No such file or directory: './exp_res/saits_testMissRate_ICU_window_4_eval_0.5.csv'

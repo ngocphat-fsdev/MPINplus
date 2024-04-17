@@ -1,0 +1,155 @@
+starting time: 2024-03-24 12:10:44.840289
+dataset:physionet
+Loading the dataset physionet_2012 with TSDB (https://github.com/WenjieDu/Time_Series_Database)...
+Starting preprocessing physionet_2012...
+Dataset physionet_2012 has already been downloaded. Processing directly...
+Dataset physionet_2012 has already been cached. Loading from cache directly...
+Loaded successfully!
+Index(['RecordID', 'ALP', 'ALT', 'AST', 'Albumin', 'BUN', 'Bilirubin',
+       'Cholesterol', 'Creatinine', 'DiasABP', 'FiO2', 'GCS', 'Glucose',
+       'HCO3', 'HCT', 'HR', 'K', 'Lactate', 'MAP', 'MechVent', 'Mg',
+       'NIDiasABP', 'NIMAP', 'NISysABP', 'Na', 'PaCO2', 'PaO2', 'Platelets',
+       'RespRate', 'SaO2', 'SysABP', 'Temp', 'TroponinI', 'TroponinT', 'Urine',
+       'WBC', 'Weight', 'pH'],
+      dtype='object')
+X shape (575424, 37)
+sum of nan: ALP            565999
+ALT            565729
+AST            565728
+Albumin        568185
+BUN            533754
+Bilirubin      565631
+Cholesterol    574430
+Creatinine     533565
+DiasABP        263626
+FiO2           485094
+GCS            390993
+Glucose        536155
+HCO3           534639
+HCT            520745
+HR              56408
+K              531762
+Lactate        551730
+MAP            265405
+MechVent       488703
+Mg             534589
+NIDiasABP      333353
+NIMAP          336687
+NISysABP       333137
+Na             534547
+PaCO2          509005
+PaO2           509125
+Platelets      533019
+RespRate       436982
+SaO2           552301
+SysABP         263603
+Temp           361791
+TroponinI      574250
+TroponinT      569177
+Urine          176846
+WBC            536682
+Weight         271356
+pH             505977
+dtype: int64
+mean_X 16.89752393585007
+std_X 78.70068915314975
+base physionet data shape: (47952, 37) (47952, 37)
+which time window:0
+window_X: (47952, 37) (47952, 37)
+rows, cols: 378380 378380
+in_channels: 37
+/Users/phatnguyen/.pyenv/versions/MNIP_master_thesis/lib/python3.8/site-packages/torch_geometric/utils/sparse.py:343: UserWarning: Sparse CSC tensor support is in beta state. If you miss a functionality in the sparse tensor support, please submit a feature request to https://github.com/pytorch/pytorch/issues. (Triggered internally at /Users/runner/work/pytorch/pytorch/pytorch/aten/src/ATen/SparseCsrTensorImpl.cpp:55.)
+  adj = torch.sparse_csc_tensor(
+222 Data(x=[47952, 37], edge_index=[2, 485294], num_of_iteration=40)
+trans_X shape torch.Size([47952, 37])
+trans_eval_X shape torch.Size([47952, 37])
+valid impute value samples: tensor([-7.1620e-02,  5.9863e-03,  2.5956e-03,  ..., -6.7968e-02,
+         9.9365e-07,  4.6769e-04])
+valid true value samples: tensor([-0.1766,  0.7891,  0.8018,  ..., -0.0241,  0.5180,  0.5350])
+valid impute error MAE: 0.7652246356010437
+valid impute error MSE: 3.762070894241333
+valid impute error MRE: 0.8911651372909546
+valid min impute error MAE: 0.765225
+valid min impute error MSE: 3.762071
+valid min impute error MRE: 0.891165
+elapsed time: 0.0560724
+min MAE error: epoch, MAE, time, MSE 0 0.765225 0.056072 3.762071
+min MSE error: epoch, MSE, time, MAE 0 3.762071 0.056072 0.765225
+which time window:0
+window_X: (47952, 37) (47952, 37)
+rows, cols: 189190 189190
+in_channels: 37
+222 Data(x=[47952, 37], edge_index=[2, 489074], num_of_iteration=40)
+trans_X shape torch.Size([47952, 37])
+trans_eval_X shape torch.Size([47952, 37])
+valid impute value samples: tensor([ 3.6192e-04, -1.3127e-05,  4.9350e-07,  ...,  0.0000e+00,
+         0.0000e+00,  1.2825e-03])
+valid true value samples: tensor([0.5794, 1.1449, 0.5699,  ..., 0.2554, 0.4841, 0.6112])
+valid impute error MAE: 0.8237563967704773
+valid impute error MSE: 4.799432277679443
+valid impute error MRE: 0.9518895745277405
+valid min impute error MAE: 0.823756
+valid min impute error MSE: 4.799432
+valid min impute error MRE: 0.95189
+elapsed time: 0.050179883333333335
+min MAE error: epoch, MAE, time, MSE 0 0.823756 0.05018 4.799432
+min MSE error: epoch, MSE, time, MAE 0 4.799432 0.05018 0.823756
+which time window:0
+window_X: (47952, 37) (47952, 37)
+rows, cols: 94595 94595
+in_channels: 37
+222 Data(x=[47952, 37], edge_index=[2, 495414], num_of_iteration=40)
+trans_X shape torch.Size([47952, 37])
+trans_eval_X shape torch.Size([47952, 37])
+valid impute value samples: tensor([2.1193e-05, 0.0000e+00, 0.0000e+00,  ..., 0.0000e+00, 0.0000e+00,
+        0.0000e+00])
+valid true value samples: tensor([0.2071, 0.7542, 0.2338,  ..., 0.9712, 0.2580, 1.5515])
+valid impute error MAE: 0.8335856795310974
+valid impute error MSE: 3.635896682739258
+valid impute error MRE: 0.9748389720916748
+valid min impute error MAE: 0.833586
+valid min impute error MSE: 3.635897
+valid min impute error MRE: 0.974839
+elapsed time: 0.06813093333333334
+min MAE error: epoch, MAE, time, MSE 0 0.833586 0.068131 3.635897
+min MSE error: epoch, MSE, time, MAE 0 3.635897 0.068131 0.833586
+which time window:0
+window_X: (47952, 37) (47952, 37)
+rows, cols: 47298 47298
+in_channels: 37
+222 Data(x=[47952, 37], edge_index=[2, 501730], num_of_iteration=40)
+trans_X shape torch.Size([47952, 37])
+trans_eval_X shape torch.Size([47952, 37])
+valid impute value samples: tensor([ 0.0000e+00,  0.0000e+00,  0.0000e+00,  ...,  0.0000e+00,
+         0.0000e+00, -7.3608e-07])
+valid true value samples: tensor([-0.2096, -0.2084,  0.2332,  ...,  0.6658,  0.7510,  0.6658])
+valid impute error MAE: 0.8693848252296448
+valid impute error MSE: 7.150832176208496
+valid impute error MRE: 0.9878706336021423
+valid min impute error MAE: 0.869385
+valid min impute error MSE: 7.150832
+valid min impute error MRE: 0.987871
+elapsed time: 0.07204528333333333
+min MAE error: epoch, MAE, time, MSE 0 0.869385 0.072045 7.150832
+min MSE error: epoch, MSE, time, MAE 0 7.150832 0.072045 0.869385
+which time window:0
+window_X: (47952, 37) (47952, 37)
+rows, cols: 23649 23649
+in_channels: 37
+222 Data(x=[47952, 37], edge_index=[2, 506229], num_of_iteration=40)
+trans_X shape torch.Size([47952, 37])
+trans_eval_X shape torch.Size([47952, 37])
+valid impute value samples: tensor([ 0.0000,  0.1096,  0.0000,  ...,  0.0031, -0.0895,  0.0000])
+valid true value samples: tensor([ 0.2580,  0.1550,  1.5896,  ...,  0.0521, -0.2084,  1.5769])
+valid impute error MAE: 0.8338106870651245
+valid impute error MSE: 2.528932809829712
+valid impute error MRE: 0.9937399625778198
+valid min impute error MAE: 0.833811
+valid min impute error MSE: 2.528933
+valid min impute error MRE: 0.99374
+elapsed time: 0.13363696666666666
+min MAE error: epoch, MAE, time, MSE 0 0.833811 0.133637 2.528933
+min MSE error: epoch, MSE, time, MAE 0 2.528933 0.133637 0.833811
+ready to write data!
+done!
+finishing time: 2024-03-24 12:11:32.473575

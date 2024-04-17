@@ -1,0 +1,191 @@
+/Users/phatnguyen/.pyenv/versions/MNIP_master_thesis/lib/python3.8/site-packages/threadpoolctl.py:1223: RuntimeWarning: 
+Found Intel OpenMP ('libiomp') and LLVM OpenMP ('libomp') loaded at
+the same time. Both libraries are known to be incompatible and this
+can cause random crashes or deadlocks on Linux when loaded in the
+same Python program.
+Using threadpoolctl may cause crashes or deadlocks. For more
+information and possible workarounds, please see
+    https://github.com/joblib/threadpoolctl/blob/master/multiple_openmp.md
+
+  warnings.warn(msg, RuntimeWarning)
+starting time: 2024-03-24 12:16:59.615958
+dataset:physionet
+Loading the dataset physionet_2012 with TSDB (https://github.com/WenjieDu/Time_Series_Database)...
+Starting preprocessing physionet_2012...
+Dataset physionet_2012 has already been downloaded. Processing directly...
+Dataset physionet_2012 has already been cached. Loading from cache directly...
+Loaded successfully!
+Index(['RecordID', 'ALP', 'ALT', 'AST', 'Albumin', 'BUN', 'Bilirubin',
+       'Cholesterol', 'Creatinine', 'DiasABP', 'FiO2', 'GCS', 'Glucose',
+       'HCO3', 'HCT', 'HR', 'K', 'Lactate', 'MAP', 'MechVent', 'Mg',
+       'NIDiasABP', 'NIMAP', 'NISysABP', 'Na', 'PaCO2', 'PaO2', 'Platelets',
+       'RespRate', 'SaO2', 'SysABP', 'Temp', 'TroponinI', 'TroponinT', 'Urine',
+       'WBC', 'Weight', 'pH'],
+      dtype='object')
+X shape (575424, 37)
+sum of nan: ALP            565999
+ALT            565729
+AST            565728
+Albumin        568185
+BUN            533754
+Bilirubin      565631
+Cholesterol    574430
+Creatinine     533565
+DiasABP        263626
+FiO2           485094
+GCS            390993
+Glucose        536155
+HCO3           534639
+HCT            520745
+HR              56408
+K              531762
+Lactate        551730
+MAP            265405
+MechVent       488703
+Mg             534589
+NIDiasABP      333353
+NIMAP          336687
+NISysABP       333137
+Na             534547
+PaCO2          509005
+PaO2           509125
+Platelets      533019
+RespRate       436982
+SaO2           552301
+SysABP         263603
+Temp           361791
+TroponinI      574250
+TroponinT      569177
+Urine          176846
+WBC            536682
+Weight         271356
+pH             505977
+dtype: int64
+mean_X 16.89752393585007
+std_X 78.70068915314974
+base physionet data shape: (47952, 37) (47952, 37)
+which time window:0
+window_X: (47952, 37) (47952, 37)
+rows, cols: 378380 378380
+initial X nan: 0
+initial eval_X nan: 0
+in_channels: 37
+MICE!!!
+/Users/phatnguyen/.pyenv/versions/MNIP_master_thesis/lib/python3.8/site-packages/sklearn/impute/_iterative.py:800: ConvergenceWarning: [IterativeImputer] Early stopping criterion not reached.
+  warnings.warn(
+trans_X shape (47952, 37)
+trans_eval_X shape (47952, 37)
+nan of X_imputed: 0
+nan of eval_X: 0
+valid impute value samples: [ 0.05908523  0.55030705 -0.20628821 ...  0.17286629  0.27742445
+  0.55130404]
+valid true value samples: [ 0.96317423  0.68744603 -0.20199981 ...  0.49685049  0.61120781
+  1.03051799]
+valid impute error MAE: 0.44673243638120536
+valid impute error MSE: 3.0760975003646878
+valid impute error MRE: 0.5172527413035953
+valid min impute error MAE: 0.446732
+valid min impute error MSE: 3.076098
+valid min impute error MRE: 0.517253
+elapsed time: 1.3388092333333332
+min MAE error: epoch, MAE, time, MSE 0 0.446732 1.338809 3.076098
+min MSE error: epoch, MSE, time, MAE 0 3.076098 1.338809 0.446732
+which time window:0
+window_X: (47952, 37) (47952, 37)
+rows, cols: 189190 189190
+initial X nan: 0
+initial eval_X nan: 0
+in_channels: 37
+MICE!!!
+trans_X shape (47952, 37)
+trans_eval_X shape (47952, 37)
+nan of X_imputed: 0
+nan of eval_X: 0
+valid impute value samples: [-0.0361465  -0.07815958  0.71818388 ... -0.00312632  0.03654724
+ -0.04619105]
+valid true value samples: [ 0.35708043 -0.20199981  3.85133192 ...  0.43331865  0.63662055
+  0.46508457]
+valid impute error MAE: 0.6944535828862608
+valid impute error MSE: 3.5059309054721024
+valid impute error MRE: 0.8085780075821486
+valid min impute error MAE: 0.694454
+valid min impute error MSE: 3.505931
+valid min impute error MRE: 0.808578
+elapsed time: 0.848196
+min MAE error: epoch, MAE, time, MSE 0 0.694454 0.848196 3.505931
+min MSE error: epoch, MSE, time, MAE 0 3.505931 0.848196 0.694454
+which time window:0
+window_X: (47952, 37) (47952, 37)
+rows, cols: 94595 94595
+initial X nan: 0
+initial eval_X nan: 0
+in_channels: 37
+MICE!!!
+trans_X shape (47952, 37)
+trans_eval_X shape (47952, 37)
+nan of X_imputed: 0
+nan of eval_X: 0
+valid impute value samples: [-0.05057162 -0.15763621  0.39756193 ...  0.15408981 -0.04971698
+ -0.04459877]
+valid true value samples: [-0.12106024 -0.10034885  0.93522022 ...  1.56418549  0.45619011
+  0.45619011]
+valid impute error MAE: 0.7956376360737546
+valid impute error MSE: 3.381248010029634
+valid impute error MRE: 0.930884573559009
+valid min impute error MAE: 0.795638
+valid min impute error MSE: 3.381248
+valid min impute error MRE: 0.930885
+elapsed time: 0.5820500000000001
+min MAE error: epoch, MAE, time, MSE 0 0.795638 0.58205 3.381248
+min MSE error: epoch, MSE, time, MAE 0 3.381248 0.58205 0.795638
+which time window:0
+window_X: (47952, 37) (47952, 37)
+rows, cols: 47298 47298
+initial X nan: 0
+initial eval_X nan: 0
+in_channels: 37
+MICE!!!
+trans_X shape (47952, 37)
+trans_eval_X shape (47952, 37)
+nan of X_imputed: 0
+nan of eval_X: 0
+valid impute value samples: [-0.00807212 -0.02879304  0.09830386 ... -0.02903222 -0.0201611
+ -0.06006116]
+valid true value samples: [ 0.70332899  0.49430922  5.23632614 ...  0.25797075 -0.20327044
+  1.6023046 ]
+valid impute error MAE: 0.8474089420976946
+valid impute error MSE: 4.29263741965895
+valid impute error MRE: 0.9801779333878432
+valid min impute error MAE: 0.847409
+valid min impute error MSE: 4.292637
+valid min impute error MRE: 0.980178
+elapsed time: 0.7503004166666667
+min MAE error: epoch, MAE, time, MSE 0 0.847409 0.7503 4.292637
+min MSE error: epoch, MSE, time, MAE 0 4.292637 0.7503 0.847409
+which time window:0
+window_X: (47952, 37) (47952, 37)
+rows, cols: 23649 23649
+initial X nan: 0
+initial eval_X nan: 0
+in_channels: 37
+MICE!!!
+trans_X shape (47952, 37)
+trans_eval_X shape (47952, 37)
+nan of X_imputed: 0
+nan of eval_X: 0
+valid impute value samples: [-0.0317127  -0.00576876  0.01238091 ... -0.01386707  0.02014553
+  0.03874605]
+valid true value samples: [-0.12194968 -0.04952338  0.14742534 ...  0.95745637  1.5197132
+  1.64148257]
+valid impute error MAE: 0.851731623204917
+valid impute error MSE: 3.0140890436369223
+valid impute error MRE: 0.9997607357565357
+valid min impute error MAE: 0.851732
+valid min impute error MSE: 3.014089
+valid min impute error MRE: 0.999761
+elapsed time: 0.4543784
+min MAE error: epoch, MAE, time, MSE 0 0.851732 0.454378 3.014089
+min MSE error: epoch, MSE, time, MAE 0 3.014089 0.454378 0.851732
+ready to write data!
+done!
+finishing time: 2024-03-24 12:21:22.812818
