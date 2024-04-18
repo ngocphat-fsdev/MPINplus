@@ -1,6 +1,6 @@
 import sys
 import pandas as pd
-sys.path.append('/home/xiaol/Documents')
+# sys.path.append('/home/xiaol/Documents')
 import torch
 # from OCW.models.regressor import MLPNet
 from utils.regressor import MLPNet

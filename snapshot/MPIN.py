@@ -57,7 +57,7 @@ torch.random.manual_seed(2021)
 # mps for using gpu macos
 # cuda for using gpu nvidia
 device = torch.device('cpu')
-out_channels = args.out_channelsch
+out_channels = args.out_channels
 lr = args.lr
 weight_decay = args.weight_decay
 epochs = args.epochs
