@@ -61,7 +61,7 @@ def load_WiFi_dataset(window=6, dataset_name='KDM', time_step=5, method='saits')
     if method == 'saits':
         ori_floor_df = pd.read_csv(f'../data/fp_sample_{dataset_name}.csv', index_col=0)
     else:
-        ori_floor_df = pd.read_csv(f'./data/fp_sample_{dataset_name}.csv', index_col=0)
+        ori_floor_df = pd.read_csv(f'../data/fp_sample_{dataset_name}.csv', index_col=0)
 
     ori_floor_df = ori_floor_df.sort_values(by=['ts'], ascending=True).reset_index(drop=True)
 

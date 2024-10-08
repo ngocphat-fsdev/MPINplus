@@ -30,8 +30,26 @@ parser.add_argument('--stream', type=float, default=1)
 
 parser.add_argument("--method", type=str, default='saits')
 
-
 args = parser.parse_args()
+
+# Redirect stdout to log and console
+class Logger:
+    def __init__(self, log_file):
+        self.terminal = sys.stdout
+        self.log = open(log_file, "a")
+
+    def write(self, message):
+        self.terminal.write(message)  # Write to the console
+        self.log.write(message)       # Write to the log file
+
+    def flush(self):
+        pass
+
+# Redirect print() output to both console and file
+log_file_name = f"{args.method}_{args.prefix}_{args.dataset}_window_{args.window}_eval_{args.eval_ratio}_stream_{args.stream}.log"
+sys.stdout = Logger(f"./log/{log_file_name}")
+
+
 # Data preprocessing. Tedious, but PyPOTS can help. 🤓
 
 # device = torch.device('cuda')
@@ -119,7 +137,7 @@ res_df = pd.DataFrame(results, columns=results_schema)
 res_df = res_df.round(4)
 
 if args.prefix == 'testNumStream':
-    res_df.to_csv(f'./exp_res/{args.method}_{args.prefix}_{args.dataset}_window_{args.window}_eval_{args.eval_ratio}_stream_{args.stream}.csv', header=True, index=False)
+    res_df.to_csv(f'./exp_results/{args.method}_{args.prefix}_{args.dataset}_window_{args.window}_eval_{args.eval_ratio}_stream_{args.stream}.csv', header=True, index=False)
 else:
-    res_df.to_csv(f'./exp_res/{args.method}_{args.prefix}_{args.dataset}_window_{args.window}_eval_{args.eval_ratio}.csv', header=True, index=False)
+    res_df.to_csv(f'./exp_results/{args.method}_{args.prefix}_{args.dataset}_window_{args.window}_eval_{args.eval_ratio}.csv', header=True, index=False)
 

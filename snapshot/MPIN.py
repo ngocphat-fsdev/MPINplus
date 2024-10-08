@@ -49,6 +49,25 @@ parser.add_argument("--dataset", type=str, default='ICU')
 
 
 args = parser.parse_args()
+
+# Redirect stdout to log and console
+class Logger:
+    def __init__(self, log_file):
+        self.terminal = sys.stdout
+        self.log = open(log_file, "a")
+
+    def write(self, message):
+        self.terminal.write(message)  # Write to the console
+        self.log.write(message)       # Write to the log file
+
+    def flush(self):
+        pass
+
+# Redirect print() output to both console and file
+log_file_name = f"MPIN_{args.prefix}_{args.dataset}_{args.k}_{args.base}_incre_{args.incre_mode}_window_{args.window}_epoch_{args.epochs}_eval_{args.eval_ratio}_stream_{args.stream}.log"
+sys.stdout = Logger(f"./log/{log_file_name}")
+
+
 starting_time = datetime.now()
 print('starting time:', starting_time)
 
@@ -139,6 +158,11 @@ def build_GNN(in_channels, out_channels, k, base):
         gnn = DynamicGCN(in_channels=in_channels, out_channels=out_channels, k=k).to(device)
     elif base == 'SAGE':
         gnn = DynamicGraphSAGE(in_channels=in_channels, out_channels=out_channels, k=k).to(device)
+    # experimental with GATv2 and GraphSAGE++
+    elif base == 'GATv2':
+        gnn = DynamicGATv2(in_channels=in_channels, out_channels=out_channels, k=k).to(device)
+    elif base == 'SAGE++':
+        gnn = DynamicGraphSAGEPlus(in_channels=in_channels, out_channels=out_channels, k=k).to(device)
 
     return gnn
 

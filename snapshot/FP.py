@@ -20,7 +20,6 @@ from utils.load_dataset import load_ICU_dataset, load_airquality_dataset, load_W
 from torch_geometric.transforms import FeaturePropagation
 from pypots.utils.metrics import cal_mae, cal_mse, cal_mre
 
-
 parser = ArgumentParser()
 parser.add_argument("--incre_mode", type=str, default='alone')
 parser.add_argument("--sample_ratio", type=float, default=0.1)
@@ -45,6 +44,25 @@ parser.add_argument("--lr", type=float, default=0.01)
 parser.add_argument("--weight_decay", type=float, default=0.1)
 
 args = parser.parse_args()
+
+
+# Redirect stdout to log and console
+class Logger:
+    def __init__(self, log_file):
+        self.terminal = sys.stdout
+        self.log = open(log_file, "a")
+
+    def write(self, message):
+        self.terminal.write(message)  # Write to the console
+        self.log.write(message)       # Write to the log file
+
+    def flush(self):
+        pass
+
+# Redirect print() output to both console and file
+log_file_name = f"{args.method}_{args.prefix}_{args.dataset}_{args.k}_incre_{args.incre_mode}_window_{args.window}_epoch_{args.epochs}_eval_{args.eval_ratio}.log"
+sys.stdout = Logger(f"./log/{log_file_name}")
+
 
 st = datetime.now()
 print('starting time:', st)

@@ -52,6 +52,23 @@ parser.add_argument("--weight_decay", type=float, default=0.1)
 
 args = parser.parse_args()
 
+# Redirect stdout to log and console
+class Logger:
+    def __init__(self, log_file):
+        self.terminal = sys.stdout
+        self.log = open(log_file, "a")
+
+    def write(self, message):
+        self.terminal.write(message)  # Write to the console
+        self.log.write(message)       # Write to the log file
+
+    def flush(self):
+        pass
+
+# Redirect print() output to both console and file
+log_file_name = f"{args.method}_{args.prefix}_{args.dataset}_window_{args.window}_eval_{args.eval_ratio}_stream_{args.stream}.log"
+sys.stdout = Logger(f"./log/{log_file_name}")
+
 st = datetime.now()
 print('starting time:', st)
 
@@ -186,6 +203,8 @@ def window_imputation(start, end, sample_ratio, initial_state_dict=None, X_last=
     elapsed_time_list = []
     st = datetime.now()
 
+    # Traditional imputation methods: MICE, KNN, MF, MEAN
+
     if args.method == 'KNN':
         X_input = copy.deepcopy(X)
         X_input[np.where(eval_mask == 1)] = np.nan
@@ -236,6 +255,7 @@ def window_imputation(start, end, sample_ratio, initial_state_dict=None, X_last=
             MF_imputer = MatrixFactorization()
         X_imputed = MF_imputer.fit_transform(X_input)
 
+    # elif args.method in ['mean', 'median', 'most_frequent', 'constant']:
     elif args.method in ['mean', 'median', 'most_frequent', 'constant']:
         X_input = copy.deepcopy(X)
         X_input[np.where(eval_mask == 1)] = np.nan
